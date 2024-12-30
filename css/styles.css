@@ -22,6 +22,7 @@ html {
 }
 html, body {
     height: 100%;
+    
 }
 body {
     background: #f6f6f6;
@@ -31,9 +32,9 @@ body {
     line-height: 1.4;
 }
 h1, h2, h3 {
-    font-family: "Caveat", cursive;
+    font-family: "Nunito";
     font-weight: 400;
-    margin: 0;
+    margin: 1rem;
 }
 h1 {
     font-size: 7rem;
@@ -86,13 +87,25 @@ footer a:hover {
     background-size: cover;
     display: flex;
     flex-direction: column;
+    padding-top: 100px;
 }
 .home .content-wrapper {
     flex: 1 0 auto;
+    
 }
 .content-bg {
-    background: rgb(255 255 255 / 0.9);
-    padding: 30px;
+    background: linear-gradient(  
+        to bottom left,  
+        #3c8453, /* Dark green (upper-right) */  
+        #bcaa96, /* Sandy beige */    
+        #d3d4d6, /* Light gray */  
+        #3c8453  /* Dark green (bottom-left) */  
+    );
+    padding: 30px; /* Space inside the content box */
+    border-radius: 10px; /* Smooth corners for the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+    text-align: center; /* Center-align the text */
+    opacity: 0.9;
 }
 @media screen and (max-width:650px) {
     .home .content-wrapper {
@@ -111,9 +124,46 @@ footer a:hover {
     content: "";
     display: block;
     height: 375px;
+    position: absolute; /* Positions pseudo-element within header */
+    top: 0; /* Aligns to the top of the header */
+    left: 0; /* Aligns to the left of the header */
+    width: 100%; /* Covers the full width of the header */
+    z-index: -1; /* Places pseudo-element behind the content */
+}
+
+/* Styling for the resume header */
+.resume-header {
+    position: relative; /* Allows child elements and pseudo-elements to be positioned */
+    color: white; /* Default text color for visibility */
+    text-align: center; /* Centers child content horizontally */
+    height: 375px; /* Sets height of the header */
+    overflow: hidden; /* Ensures elements don't overflow header boundaries */
+}
+
+/* Styling for the resume introduction box */
+.resume-intro {
+    position: relative; /* Positions the introduction box in front of pseudo-element */
+    background: linear-gradient(  
+        to bottom left,  
+        #3c8453, /* Dark green (upper-right) */  
+        #bcaa96, /* Sandy beige */    
+        #d3d4d6, /* Light gray */  
+        #3c8453  /* Dark green (bottom-left) */  
+    );
+    top: 30px; /* Adjusts vertical position within the header */
+    padding: 30px; /* Adds space inside the box */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    text-align: center; /* Centers text inside the box */
+    opacity: 0.9; /* Slight transparency */
+    display: inline-block; /* Shrinks box to fit content */
+    z-index: 1; /* Ensures box appears above pseudo-element */
 }
 .resume-section {
     margin-bottom: 50px;
+}
+.resume-profile {
+    padding-top: 100px;
 }
 .resume-section h2 {
     border-bottom: 2px dashed #d3d4d6;
