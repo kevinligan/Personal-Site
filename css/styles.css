@@ -91,6 +91,10 @@ footer a:hover {
 }
 .home .content-wrapper {
     flex: 1 0 auto;
+    position: relative; /* Required for animation positioning */
+    top: -100px; /* Start position off-screen */
+    opacity: 0; /* Hidden at the start */
+    transition: top 1.5s ease, opacity 1.5s ease; /* Smooth animation effects */
     
 }
 .content-bg {
@@ -158,6 +162,10 @@ footer a:hover {
     opacity: 0.9; /* Slight transparency */
     display: inline-block; /* Shrinks box to fit content */
     z-index: 1; /* Ensures box appears above pseudo-element */
+    top: -100px; /* Start position off-screen */
+    opacity: 0; /* Hidden at the start */
+    transition: top 1.5s ease, opacity 1.5s ease; /* Smooth animation effects */
+    
 }
 .resume-section {
     margin-bottom: 50px;
